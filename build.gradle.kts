@@ -27,7 +27,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-//    testImplementation("org.amshove.kluent:kluent:1.49")
 }
 
 tasks.withType<KotlinCompile> {
@@ -39,4 +38,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.named<BootJar>("bootJar") {
     launchScript()
+}
+
+tasks.named<Test>("test") {
+    maxParallelForks = 1
 }
